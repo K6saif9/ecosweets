@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoSweets - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #4caf50;
+            color: white;
+        }
+        nav {
+            text-align: center;
+            margin: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .hero {
+            background-image: url('hero_banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .intro {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .product {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+        .product img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+        .product-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        input[type="submit"], button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .cart {
+            padding: 20px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EcoSweets</h1>
+    </header>
+    <nav>
+        <a href="#home" onclick="showPage('home')">Home</a>
+        <a href="#products" onclick="showPage('products')">Products</a>
+        <a href="#about" onclick="showPage('about')">About Us</a>
+        <a href="#contact" onclick="showPage('contact')">Contact Us</a>
+        <a href="#register" onclick="showPage('register')">Register</a>
+        <a href="#cart" onclick="showPage('cart')">Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+
+    <!-- Home Page Content -->
+    <div id="home" style="display: block;">
+        <div class="hero">
+            <h1>Welcome to EcoSweets</h1>
+        </div>
+        <div class="intro">
+            <p>Discover our range of eco-friendly and organic sweets. At EcoSweets, we are committed to providing delicious treats that are good for you and the environment. Explore our selection and find your new favorite snack!</p>
+        </div>
+        <main>
+            <h2 style="text-align: center;">Featured Products</h2>
+            <section class="product-list">
+                <div class="product">
+                    <h3>Organic Gummies</h3>
+                    <img src="organic_gummies.jpg" alt="Organic Gummies">
+                    <p>Delicious and healthy organic gummies.</p>
+                    <p><strong>Price: 1.88 BHD</strong></p>
+                    <button onclick="addToCart('Organic Gummies', 1.88)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h3>Vegan Chocolate</h3>
+                    <img src="vegan_chocolate.jpg" alt="Vegan Chocolate">
+                    <p>Rich and smooth vegan chocolate.</p>
+                    <p><strong>Price: 2.25 BHD</strong></p>
+                    <button onclick="addToCart('Vegan Chocolate', 2.25)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h3>Gluten-Free Cookies</h3>
+                    <img src="gluten_free_cookies.jpg" alt="Gluten-Free Cookies">
+                    <p>Crunchy and tasty gluten-free cookies.</p>
+                    <p><strong>Price: 1.50 BHD</strong></p>
+                    <button onclick="addToCart('Gluten-Free Cookies', 1.50)">Add to Cart</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Products Page Content -->
+    <div id="products" style="display: none;">
+        <header>
+            <h1>Our Products</h1>
+        </header>
+        <main>
+            <div class="product-list">
+                <div class="product">
+                    <h2>Organic Gummies</h2>
+                    <img src="organic_gummies.jpg" alt="Organic Gummies">
+                    <p>Delicious and healthy organic gummies.</p>
+                    <p><strong>Price: 1.88 BHD</strong></p>
+                    <button onclick="addToCart('Organic Gummies', 1.88)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h2>Vegan Chocolate</h2>
+                    <img src="vegan_chocolate.jpg" alt="Vegan Chocolate">
+                    <p>Rich and smooth vegan chocolate.</p>
+                    <p><strong>Price: 2.25 BHD</strong></p>
+                    <button onclick="addToCart('Vegan Chocolate', 2.25)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h2>Gluten-Free Cookies</h2>
+                    <img src="gluten_free_cookies.jpg" alt="Gluten-Free Cookies">
+                    <p>Crunchy and tasty gluten-free cookies.</p>
+                    <p><strong>Price: 1.50 BHD</strong></p>
+                    <button onclick="addToCart('Gluten-Free Cookies', 1.50)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h2>Organic Lollipops</h2>
+                    <img src="organic_lollipops.jpg" alt="Organic Lollipops">
+                    <p>Sweet and natural organic lollipops.</p>
+                    <p><strong>Price: 1.13 BHD</strong></p>
+                    <button onclick="addToCart('Organic Lollipops', 1.13)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h2>Fruit Snacks</h2>
+                    <img src="fruit_snacks.jpg" alt="Fruit Snacks">
+                    <p>Natural and flavorful fruit snacks.</p>
+                    <p><strong>Price: 1.31 BHD</strong></p>
+                    <button onclick="addToCart('Fruit Snacks', 1.31)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h2>Honey Candies</h2>
+                    <img src="honey_candies.jpg" alt="Honey Candies">
+                    <p>Smooth and sweet honey candies.</p>
+                    <p><strong>Price: 1.69 BHD</strong></p>
+                    <button onclick="addToCart('Honey Candies', 1.69)">Add to Cart</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- About Us Page Content -->
+    <div id="about" style="display: none;">
+        <header>
+            <h1>About Us</h1>
+        </header>
+        <main>
+            <p>EcoSweets is committed to providing eco-friendly and organic sweets. We believe in sustainability and healthy living, which is why we use only the finest ingredients in our products.</p>
+        </main>
+    </div>
+
+    <!-- Contact Us Page Content -->
+    <div id="contact" style="display: none;">
+        <header>
+            <h1>Contact Us</h1>
+        </header>
+        <main>
+            <p>We'd love to hear from you! Reach out to us with any questions or feedback.</p>
+            <p>Email: info@ecosweets.com</p>
+            <p>Phone: +973 66692202</p>
+        </main>
+    </div>
+
+    <!-- Registration Page Content -->
+    <div id="register
